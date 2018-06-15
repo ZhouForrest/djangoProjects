@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.center {
+				width: 200px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="center">
+			<label for="num">请输入: </label>
+			<input type="text" id="num" size="2">
+			<button id="ok">确定</button>
+			<button id="reset" disabled>重置</button>
+			<div id="hint"></div>
+		</div>
+		<script src="js/mylid.js">
+			console.log($)
+		</script>
+		<script>
+			(function() {
+				var answer = parseInt(Math.random() * 100 + 1);
+				var counter = 0;
+				$('reset').onclick = function() {
+					answer = parseInt(Math.random() * 100 + 1);
+					counter = 0;
+					$('hint').innerHTML = '';
+					$('ok').disabled = false;
+					$('reset').disabled = true;
+					$('num').focus();
+				};
+				$('ok').onclick = function() {
+					counter += 1;
+					var numInput = $('num');
+					var value = parseInt(numInput.value);
+					if (isNaN(value)) {
+						window.alert('输入错误!!!');
+					} else {
+						var message = '你猜的是' + numInput.value + ', ';
+						if (numInput.value > answer) {
+							message += '小一点.';
+						} else if (numInput.value < answer) {
+							message += '大一点.';
+						} else {
+							message += '恭喜你猜对了!';
+							$('ok').disabled = true;
+							$('reset').disabled = false;
+							if (counter > 7) {
+								message += '<br>智商余额不足!!!';
+							}
+						}
+						var hintDiv = $('hint');
+						hintDiv.innerHTML += '<p>' + message + '</p>';
+						numInput.value = '';
+						numInput.focus();
+					}
+				};
+			}());
+		</script>
+	</body>
+</html>
+

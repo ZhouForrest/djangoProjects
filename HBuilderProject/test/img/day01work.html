@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>	
+		<h1 id=time>大家好</h1>
+		<button onclick="showtime()">显示时间</button>
+		<p>
+			<script>
+				function showtime(){
+					var time = new Date()
+//					document.write(time)
+					var h = document.getElementById('time')
+					h.textContent = '<strong>当前时间:</strong>' + time
+					h.innerHTML = '<strong>当前时间:</strong>' + time
+				}
+			</script>
+		</p>
+	</body>
+</html>

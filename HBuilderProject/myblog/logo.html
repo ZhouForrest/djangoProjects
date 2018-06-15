@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				width: 960px;
+				margin: 0 auto;
+			}
+			h1 {
+				height: 80px;
+				line-height: 80px;
+				text-align: center;
+			}
+			#header {
+				height: 120px;
+				background-color:linen;
+				margin: 10px 0;				
+			}
+			
+			#nav ul {
+				width: 720px;
+				height: 40px;
+				margin:0 auto;
+			}
+			#nav li {
+				text-align: center;
+				width: 140px;
+				margin: 10px 20px;
+				display: inline-block;
+				list-style: none;
+				
+			}
+			#nav a {
+				text-decoration: none;
+			}
+			
+			#content1,#content2 {
+				background: #DEB887;
+				margin-bottom:10px ;
+				
+			}
+			#content1 {
+				height: 200px;
+			}
+			.section {
+				height: 200px;
+				width: 300px;
+				float: left;
+				margin-bottom: 10px;
+			}
+			.one {
+				background: #FAF0E6 !important;
+			}
+			.two {
+				background: blue !important;
+				margin: 0 30px;
+			}
+			.three {
+				background:  lightblue !important;
+			}
+			#footer {
+				margin: 10px 0;
+				text-align: center;
+				height: 100px;
+				line-height: 120px;
+				background: #F5F5F5;
+				clear: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<h1>Logo</h1>
+			<div>
+				<div id="content1"></div>
+				<ul id="nav">
+					<li><a href="picturex">Home</a></li>
+					<li><a href="">Products</a></li>
+					<li><a href="">Services</a></li>
+					<li><a href="">About</a></li>
+					<li><a href="">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="main">
+			<div id="content1"></div>
+			<div id="content2">
+				<div class="section one"></div>
+				<div class="section two"></div>
+				<div class="section three"></div>
+			</div>
+		</div>
+		<div id="footer">
+			<h2>&copy;Copyright 2011</h2>
+		</div>
+	</body>
+</html>

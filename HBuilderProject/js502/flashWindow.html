@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#containter {
+				width: 802px;
+				height: 402px;
+				border: 1px solid blanchedalmond;
+				margin: 0 auto;				
+			}
+			#panel {
+				width: 802px;
+				margin: 0 auto;	
+				text-align: center;
+			}
+			.pice {
+				width: 80px;
+				height: 80px;
+				float: left;			
+			}
+		</style>
+	</head>
+	<body>
+		<div id='containter'></div>
+		<div id='panel'>
+			<button id='addBtn'>添加</button>
+			<button id="flaBtn">闪烁</button>
+		</div>
+		<script src="js/mylib.js"></script>
+		<script>
+			function randomColor(){
+				var r = parseInt(Math.random()*256);
+				var g = parseInt(Math.random()*256);
+				var b = parseInt(Math.random()*256);
+				return 'rgb('+ r + ',' + g + ',' + b + ')';
+			}
+			(function(){
+				$('addBtn').addEventListener('click',function(){
+					counter = 0;
+					var timer = setInterval(function(){
+						counter += 1;
+						var div = document.createElement('div');
+						div.className = 'pice';
+						div.style.backgroundColor = randomColor();
+						$('containter').appendChild(div);
+						if (counter == 50){
+						clearInterval(timer);
+						};						
+					},20);					
+				});
+				var timer = 0;
+				if (!timer){
+					$('flaBtn').addEventListener('click',function(){
+						timer = setInterval(function(){
+							var allPices = $('containter').children;
+							for (var i = 0; i < allPices.length; i += 1){
+							allPices[i].style.backgroundColor=randomColor();
+							}
+						},200);
+					})
+				}
+			}());
+		</script>
+	</body>
+</html>

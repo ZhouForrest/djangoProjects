@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>菜单</title>
+		<style>
+			@font-face {
+				font-family:字体;
+				src:url(字体路径);
+			}/*给浏览器传无法识别的字体*/
+			*{	margin:0;
+				padding: 0;
+				border: 1px solid bisque;
+				
+				
+				
+			}
+			#data {
+				width:120px;
+				height:60px
+				border-radius: 6px 6px 6px 6px;
+				border-collapse: collapse;
+				
+			}
+			.foo {
+				
+				background: green;
+				list-style-type:none;
+				font:30px '幼圆';
+				text-align: center;
+			}
+			.foo:hover{
+				color:blue;				
+			}
+			.foo li{
+				border: 1px solid bisque;
+				display: none;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="data">
+			<ol class="foo">水果
+				<li>苹果</li>
+				<li>香蕉</li>
+				<li>西瓜</li>
+			</ol>
+			<ol class="foo">蔬菜
+				<li>白菜</li>
+				<li>青菜</li>
+				<li>萝卜</li>
+			</ol>
+			<ol class="foo">动物
+				<li>老虎</li>
+				<li>狮子</li>
+				<li>大象</li>
+			</ol>
+			<ol class="foo">运动
+				<li>篮球</li>
+				<li>足球</li>
+				<li>跳水</li>
+			</ol>
+			<ol class="foo">汽车
+				<li>奔驰</li>
+				<li>宝马</li>
+				<li>奥迪</li>
+			</ol>
+		</ul>
+	</body>
+</html>

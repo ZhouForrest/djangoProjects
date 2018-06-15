@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			a {
+				background: blanchedalmond;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<ul id='adv'>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li>苹果<a href=""></a></li>
+			</ul>
+			<input type="text" id='tex'/>
+			<button id='add'>添加</button>
+		</div>
+		<script type="text/javascript">
+			var ul = document.getElementById('adv');
+			var li = document.createElement('li');
+			var a = document.createElement('a');
+			li. = document.getElementById('tex').value.trim();
+			(function(){
+				var id = document.getElementById('add');
+				id.addEventListener('click',function(){
+					li.appendChild(a);
+					ul.appendChild(li);
+				})
+			}())
+		</script>
+	</body>
+</html>

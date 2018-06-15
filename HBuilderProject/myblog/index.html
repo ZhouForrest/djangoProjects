@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--元数据信息(字符集/关键字/描述信息/响应式布局/标题)-->
+		<meta charset="utf-8" />
+		<title>myblog</title>
+		<!--CSS - Cascading Style Sheet-->
+		<!--
+        	内部样式表-->
+		<style>	
+		</style>
+		<!--外部样式表(其他页面)所有页面可以共享一个样式表,内容和显示的分离:
+			\可以很容易实现换皮肤操作-->
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<!--显示在浏览器中的内容-->
+		<h1>VIP用户登录</h1>
+		<hr/>
+		<form id="login" method="post">
+		<div>
+			<label class="foo">用户名:</label>
+			<input type="text" name="uid" required/>
+		
+		</div>
+			<label class="foo">密码:</label>
+			<input type="password" name="pwd" required/>
+		</div>
+		<div class="center">
+			<input type="submit" value="登录"/>
+			<input type="reset"  value="重置"/>
+			
+		</div>
+		<div class="last">
+			<a href="https://www.daidu.com" target="_blank">新用户注册</a>
+		</div>
+		</form>
+	</body>
+</html>

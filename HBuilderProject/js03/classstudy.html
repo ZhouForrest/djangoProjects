@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script >
+			var day = new Date().getDay();
+			var work;
+			//只做等值判断,并且做的全等判断,每个事件后跟break
+			switch (day) {
+				case 1:
+					work = '写程序';
+					break;
+				case 2: case:3 case:4
+					work = '改bug';
+					break
+				default:
+					work = '休息';
+			}
+			window.alret(work);
+			var sum = 0;
+			var i = 1;
+			do {
+				sum += i;
+				i += 1;
+			}while (i < 100);
+			document.write(sum)
+			
+		</script>
+	</body>
+</html>

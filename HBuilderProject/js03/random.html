@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				width: 200px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>	
+		<label for="">请输入您的答案</label>
+		<input type="text" size="2"  id="num"/>
+		<button id="ok">确定</button>
+		<button id="reset">重置</button>
+		<div id="hint"></div>
+		
+		<script src="js/mylid.js"></script>
+		<script >			
+			(function(){
+				var answer = parseInt(Math.random() * 100 + 1);	
+				var counter = 0;
+				$('reset').onclick = function() {
+					var answer = parseInt(Math.random() * 100 + 1);	
+					var counter = 0;
+					$('hint').innerHTML = '';
+					$('ok').disabled = false;
+					$('reset').disabled = true;
+					$('num').focus;				
+				};
+				$('ok').onclick = function() {
+					counter += 1;
+					$('ok').disable() = true;
+					$('reset').disable() = false;
+					var numInput = $('num').value;
+					var message = '您猜的是' + numInput + '';
+					if (numInput > answer) {
+						message += ('小一点');
+					}else if (numInput < answer){
+						message += ('小一点');
+					}	
+					else {
+						message += ('答对了');
+						if (counter > 7){
+							message += ('智商捉急');
+						}
+					}
+					$('hint').innerHTML += '<P>' + message + '<p>';
+					numInput = '';
+					$('num').focus();
+				};
+			}());
+//事件绑定addEventLisenter(var1, var2)var1:事件名称,var2:函数,removeEventLisenter()取消事件绑定
+			function foo(){
+				alert('hllo');
+			}
+			$('ok').addEventListener('click', foo);
+			$('ok').addEventListener('click', function()){
+				if(window.confirm('are you sure?')){
+					$('ok').removeEventListener('click', foo)
+				}
+			}
+										
+		</script>
+	</body>
+</html>

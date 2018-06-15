@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+			}
+			#one {
+				background: bisque;
+				position: fixed;
+				top: 0;
+				left: 0;
+			}
+			#two {
+				background: burlywood;
+				position: fixed;
+				bottom: 0;
+				right: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='one'></div>
+		<div id='two'></div>
+		<script src="js/mylib.js"></script>
+		<script>
+			function makeDraggable(elem){
+				 elem.isMouseDown = false;
+				elem.originleft = 0;
+				elem.origintop = 0;
+				elem.mousex = 0;
+				elem.mousey = 0;
+				bind(elem, 'mousedown', function(evt){
+					evt = evt || window.event;
+					elem.isMouseDown = true;
+					var divStyle = getStyle(elem);
+					elem.originleft = parseInt(divStyle.left);
+					elem.origintop = parseInt(divStyle.top);
+					elem.mousex = evt.clientX;
+					elem.mousey = evt.clientY;					
+				});
+				bind(elem, 'mouseup', function(){					
+					elem.isMouseDown = false;
+				});
+				bind(elem, 'mouseout', function(){					
+					elem.isMouseDown = false;
+				});
+				bind(elem, 'mousemove', function(evt){
+					if (!elem.isMouseDown) return;
+						evt = evt || window.event;
+						var dx = evt.clientX - elem.mousex;
+						var dy = evt.clientY - elem.mousey;
+						elem.style.left = (elem.originleft + dx) + 'px';
+						elem.style.top = (elem.origintop + dy) + 'px';					
+				});	
+				
+			}
+			(function(){
+				makeDraggable($('one'));
+				makeDraggable($('two'));
+			}());				
+		</script>
+	</body>
+</html>

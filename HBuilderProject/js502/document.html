@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Hello</title>
+		<style>
+			li {
+				width: 180px;
+				height: 40px;
+				margin-bottom: 2px;
+				font: 20px/40px arial,"微软雅黑";
+				text-align: center;
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='page'>
+			<h1 id='header'>List</h1>
+			<h2>Buy groceries</h2>
+			<ul>
+				<li id='one' class='hot'><em>fresh</em></li>
+				<li id='two' class='hot'>pine nuts</li>
+				<li id='three' class='hot'>history</li>
+				<li id='four'>balsamic vinegar</li>
+			</ul>
+			<h2>I Love you</h2>
+		</div>
+		
+		<script>
+		//修改节点
+		//textContent/innerHTML(可带标签)/nodeValue
+		//访问成员运算符
+		//.属性名/setAttribute()/getAttrbute/removeAttrbute
+		
+			(function(){				
+				var hs = document.querySelectorAll('#page>h2');
+				for (var i = 0; i < hs.length; i += 1){
+					hs[i].textContent = 'shit';
+					hs[i].firstChild.nodeValue = 'Dinner is on me';
+//					hs[i].setAttribute('id', 'foo');
+//					alert(hs[i].getAttribute('id'));
+//					hs[i].removeAttribute('id');
+//					alert(hs[i].getAttribute('id'));					
+				};	
+				//创建新的节点appendChild()/insertBefore()
+				//删除节点removeChild()
+				//parentNode父节点
+				//children/firstChlid/lastChild子节点
+				//nextSibling/prevSibling
+				var ul = document.querySelector('#page>ul');
+				var li = document.createElement('li');
+				li.className = 'hot';
+				li.innerHTML = 'new item';
+				ul.insertBefore(li, ul.firstChild);
+//				ul.appendChild(li);
+				var es = document.getElementsByClassName('hot');
+				for(var i = 0; i < es.length; i += 1) {
+					es[i].style.backgroundColor = 'blanchedalmond';
+				};
+			}());
+		</script>
+	</body>
+</html>

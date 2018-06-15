@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--var btn = $('ok');
+				bind(btn, 'click', foo);
+				bind(btn, 'click', function() {
+					if (window.confirm('Are you sure?')) {
+						unbind(this, 'click', foo);
+					}
+				});
+	-->
+	<button id='ok'>ok</button>
+	<script src="js/mylid.js"></script>
+	<script type="text/javascript">
+		function foo() {
+			alert('hello');
+		};
+		btn = $('ok');
+		bind(btn, 'click', foo);
+		bind(btn, 'click', function() {
+			if (window.confirm('Are you sure?')) {
+				unbind(this, 'click', foo);
+			}
+		});
+		
+	</script>
+	</body>
+</html>

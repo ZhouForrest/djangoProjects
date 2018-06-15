@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			#one {
+				width: 400px;
+				height: 400px;
+				background: red;
+			}
+			#two {
+				width: 300px;
+				height: 300px;
+				background: green;
+				position: relative;
+				top: 50px;
+				left: 50px;
+			}
+			#three {
+				width: 200px;
+				height: 200px;
+				background: blue;
+				position: relative;
+				top: 50px;
+				left: 50px;
+			}
+		</style>
+	</head>
+	<body >
+		<div id='one'>
+			<div id='two'>
+				<div id='three'></div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			(function(){
+				bind($('one'),'click',function(){
+					alert('I am one');
+				});
+				bind($('two'),'click',function(){
+					alert('I am two');
+				});
+				bind($('three'),'click',function(evt){
+					alert('I am three');
+					evt = handleEvent(evt);
+					evt.stopPropagation();
+				});
+			}())
+		</script>
+	</body>
+</html>

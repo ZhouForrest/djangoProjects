@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='MM'></div>
+		<button id="loadbtn">加载</button>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$('#loadbtn').on('click',function(){
+					
+//					$.getJSON(url, function(obj){
+//						$.each(obj.newslist.items, function(i, item){
+//							 $("<img/>").attr("src", item.picUrl).appendTo("#MM");
+//						})
+//						for (var i = 0; i < obj.newslist.length; i += 1) {
+//							$('<img>').attr('src',obj.newslist[i].picUrl).attr('width',300).attr('height',300).appendTo('#MM');
+//						}
+					$.ajax({
+						'url':'http://api.tianapi.com/meinv/',//统一资源定位符
+						'type':'get',//请求方式
+						'data':{     //发送给服务器请求的参数
+							'key':'d70551c521d1aea6bb5049bd8d774fce',
+							'num':10
+						},
+						'datatype':'json', //服务器相应的数据类型
+						'success':function(obj){//请求成功时的回调函数
+							for (var i = 0; i < obj.newslist.length; i += 1) {
+								$('<img>').attr('src',obj.newslist[i].picUrl).attr('width',300).attr('height',300).appendTo('#MM');
+							}
+						},
+//						'error':function(){							
+//						}
+					})
+				})
+			})
+		</script>
+			
+	</body>
+</html>

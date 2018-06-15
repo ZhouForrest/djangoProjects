@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加课程</title>
+</head>
+<body>
+
+
+    <form action="" method="post">
+        <select name="c_id">
+        {% for course in courses %}
+            <option value="{{course.c_id}}">{{course.c_name}}</option>
+        {% endfor %}
+        </select>
+        <input type="submit" value="提交">
+  </form>
+
+
+
+</body>
+</html>

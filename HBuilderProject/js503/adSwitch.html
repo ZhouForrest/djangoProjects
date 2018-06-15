@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#adv {
+				width: 200px;
+				height: 204px;
+				overflow: hidden;
+				position: fixed;
+				left: 500px;
+				top: 50px;			
+			}
+			.pic{
+				width: 815px;
+				height: 200px;
+			}
+			img {
+				width:200px;
+				 height:200px;
+				 margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='adv'>
+			<div class='pic'>
+				<img src="img/1.jpg" />	
+				<img src="img/4.jpg"/>	
+				<img src="img/mm.jpg" />	
+				<img src="img/1.jpg" />
+			</div>	
+		</div>	
+		<script src="js/jquery.min.js"></script>
+		<script>
+			function move(){						
+				var Left = $('.pic').offset().left;
+				if (Left == -100){
+					$('.pic').offset({left:500});
+				}else{
+					$('.pic').offset({left:Left-4});	
+				}					
+			}
+			$(function(){
+				var timer = setInterval(move,100);
+				$('#adv').on('mouseover',function(){
+					clearInterval(timer);
+				});
+				$('#adv').on('mouseout',function(){
+					timer = setInterval(move,100);
+				});
+			});
+		</script>
+	</body>
+</html>

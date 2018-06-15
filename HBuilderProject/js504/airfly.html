@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.plane {
+				width: 100px;
+				height: 124px;
+				position: fixed;
+				background-image:url(img/hero1.png) ;
+			}
+		</style>
+	</head>
+	<body>
+		<!--构造器函数-->
+		<script src="js/jquery.min.js"></script>
+		<script>
+			function Plane(x,y,speed){
+				this.x = x;
+				this.y = y;
+				this.speed = speed;				
+			}
+			Plane.prototype.flag = true;
+			Plane.prototype.init = function(){
+				this.div = $('<div>').addClass('plane').css('top',this.y+'px').css('left',this.x+'px');
+				$(document.body).append(this.div);
+			};
+			Plane.prototype.fly = function(){
+				var img = this.flag ? 'img/hero1.png' : 'img/hero2.png';
+					this.y -= this.speed;
+					this.div.css('background-image','url('+ img + ')').css('top',this.y+'px');
+					this.flag = !this.flag;
+			};	
+			Plane.prototype.destroy = function(){
+				this.div.remove();
+			}
+			$(function(){
+				var planes = [];
+				for (var i = 0; i < 10; i += 1){
+					var speed = parseInt(Math.random()*7 + 2);
+					var plane = new Plane(100 * i, 500, speed);
+					plane.init();
+					planes[i] = plane;
+				};
+				setInterval(function(){
+					for (i = 0; i < planes.length ;i += 1){
+						planes[i].fly();
+						if (planes[i].y < -124){
+							planes[i].destroy();
+						}
+					}
+				},50);					
+			});
+		</script>
+	</body>
+</html>

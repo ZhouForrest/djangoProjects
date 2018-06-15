@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#one {
+				position: absolute;
+				right: 800px;
+				bottom: 0;
+			}
+			#two {
+				position: absolute;
+				right: 400px;
+				bottom: 50px;
+			}
+			#three {
+				position: absolute;
+				right: 200px;
+				bottom:100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img src="img/hero2.png" id='one' />
+		</div>
+		<div>
+			<img src="img/hero2.png" id='two' />
+		</div>
+		<div>
+			<img src="img/hero2.png" id='three' />
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			function airMove(elem){
+				var flag = true;
+				setInterval(function(){											
+					flag ? $(elem).attr('src','img/hero1.png'):$(elem).attr('src','img/hero2.png');
+					flag = !flag;
+					var Top = $(elem).offset().top;
+					$(elem).offset({top:Top-4});
+				},100)	
+			}
+			$(function(){
+				airMove('#one');
+				airMove('#two');
+				airMove('#three');
+			})
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block extCSS %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+{% endblock %}
+{% block content %}
+    {% from 'common.html' import show_name %}
+    {{ show_name() }}
+    <br>
+    <form action="" method="post">
+        姓名: <input type="text" name="username" >
+        <input type="submit">
+        <br>
+        {% from 'common.html' import show_goods %}
+        {{ show_goods('1', '小布丁') }}
+    </form>
+{% endblock %}

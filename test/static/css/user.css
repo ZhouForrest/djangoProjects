@@ -1,0 +1,7 @@
+div{
+    font-size: 0.4rem;
+}
+div input{
+    font-size: 0.4rem !important;
+    height: 1rem !important;
+}

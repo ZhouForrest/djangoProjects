@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+//			function foo(a, b) {
+//				return a + b;
+//			}//同名函数时后面覆盖前面,不传参数时可以传多个参数
+//			function foo() {
+//				var sum = 0;
+//				for (var i = 1; i < arguments.length; i += 1){
+//					sum += i;
+//				}
+//				return sum;
+//			}
+//			window.alert(foo(1, 2, 3, 4, 5));
+//			function f(n) {
+				//1.收敛条件 2.递归公式
+//				if (n == 1 || n == 0){
+//					return 1;
+//				}else {
+//					return arguments.callee(n - 1) * n;//正在被调用的对象
+//				}				
+//			}
+//			window.alert(f(3));
+//			window.alert(f(50))
+//			function g(n) {
+//				if (n < 0){
+//					return 0;				
+//				}else if (n == 0){
+//					return 1;
+//				}
+//				return g(n - 1) + g(n - 2) + g(n - 3);
+//			}
+//			window.alert(g(3))
+			function f(n) {
+				if (n == 0 || n ==1){
+					return 1;
+				}return f(n - 1) * (4*n-2)/(n+1);
+			}
+//			window.alert(f(2))
+		</script>
+	</body>
+</html>

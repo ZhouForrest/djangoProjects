@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			@font-face {
+				font-family:字体;
+				src:url(字体路径);
+			}/*给浏览器传无法识别的字体*/
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				width: 80%;			
+				margin: 0 auto;
+			}
+			table {
+				width: 720px;
+				margin: 10px auto;
+				border-collapse: collapse;
+			}
+			#data tr {
+				height: 50px;
+			}
+			.center {
+				text-align: center;
+			}
+			#data td {
+				border: 1px solid blue;
+								
+			}
+			.t {
+				background: #5F9EA0;
+			}
+			.t1 {
+				background: #F5F5F5;
+			}
+			.t2 {
+				background-color:rgb(220,220,220);
+			}
+			.top {
+				border-top: none !important;
+			}
+			.left {
+				border-left: none !important;
+			}
+			.right {
+				border-right: none !important;
+			}
+			.bottom {
+				border-bottom: none !important;
+			}
+			.tp {
+				border-top-left-radius: 8px;
+			}
+			.bl {
+				border-bottom-left-radius: 8px;
+			}
+			.tr {
+				border-top-right-radius: 8px;
+			}
+			.br{
+				border-bottom-right-radius: 8px;			
+			}
+		</style>
+	</head>
+	<body>
+		<table id="data">
+			<tr class="t">
+				<td class="top left tp"></td>
+				<td class="center top">成都</td>
+				<td class="center top">北京</td>
+				<td class="center top right tr">杭州</td>
+			</tr>
+			<tr class="t1">
+				<td class="center left">python从入门到住院</td>
+				<td>2018年2月28日上午9:30</td>
+				<td>2018年3月28日上午9:30</td>
+				<td class="right">2018年4月28日上午9:30</td>				
+			</tr>
+			<tr class="t2">
+				<td class="center left">mysql从删除到跑路</td>
+				<td>2018年2月28日上午9:30</td>
+				<td>2018年2月28日上午9:30</td>
+				<td class="right">2018年2月28日上午9:30</td>
+			</tr>
+			<tr class="t1">
+				<td class="center left">django从学习到上吊</td>
+				<td>2018年2月28日上午9:30</td>
+				<td>2018年2月28日上午9:30</td>
+				<td class="right">2018年2月28日上午9:30</td>
+			</tr>
+			<tr class="t2">
+				<td class="center left bottom bl">爬虫从精通到坐牢</td>
+				<td class="bottom">2018年2月28日上午9:30</td>
+				<td class="bottom">2018年2月28日上午9:30</td>
+				<td class="bottom right br">2018年2月28日上午9:30</td>
+			</tr>
+		</table>
+	</body>
+</html>

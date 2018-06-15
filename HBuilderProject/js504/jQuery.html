@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#adv {
+				width: 300px;
+				height: 300px;
+			}
+			img {
+				width: 300px;
+				height: 300px;
+			}
+			p {
+				text-align: center;
+				background: gainsboro;
+				width: 200px;
+				font: 20px "微软雅黑";
+			}
+			#wd {
+				width: 800px;
+				height: 400px;
+				border: 1px solid beige;
+			}
+			#fruit li {
+				list-style: none;
+				background: lavender;
+				width: 50px;
+				margin-bottom:2px ;
+			}
+			.pice {
+				width: 80px;
+				height: 80px;
+				float: left;
+			}
+			div {
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="adv">
+			<img src="img/1.jpg" alt="" />
+		</div>
+		<div id='pome'>
+			<p>鹅鹅鹅</p>
+			<p>白毛浮绿水</p>
+			<p>红掌拨清波</p>
+			<p>取向象天空</p>
+		</div>
+		<div>
+			<ul id='fruit'>
+				<li>苹果<a>x</a></li>
+				<li>香蕉<a>x</a></li>
+				<li>芒果<a>x</a></li>
+				<li>榴莲<a>x</a></li>
+			</ul>
+		</div>
+		<div>
+			<input type="text" id='uid'/>
+			<button id='addBtn'>添加</button>
+			<button id='delBtn'>删除</button>
+		</div>
+		<div id='wd'></div>
+		<div>
+			<button id='add'>增加</button>
+			<button id='flash'>闪烁</button>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			function color(){
+				var r = parseInt(Math.random()*256);
+				var g = parseInt(Math.random()*256);
+				var b = parseInt(Math.random()*256);
+				return 'rgb('+ r + ',' + g + ',' + b +')';
+			}
+			function show(){
+				$('#wd div').each(function(evt){
+					$(this).css('background-color',color());
+				});
+        	}
+			$(function(){
+				function removeelem(evt){
+					$(evt.target).parent().remove();
+				};
+				$('#fruit a').on('click',removeelem);
+				$('#adv').fadeIn(2000);
+				$('#adv').on('click',function(){
+					$('#adv').fadeOut(3000);
+				});
+				$('#pome p').on('click',function(evt){
+					$('#pome p').css('background-color', 'blue');
+					$(evt.target).css('background-color','red');
+				});
+				$('#addBtn').on('click', function(){
+					var fruitName = $('#uid').val().trim();
+					if (!fruitName != '')return;					
+						$('#fruit').append($('<li>').text(fruitName).css('list-style','none').append($('<a>').text('x').on('click',removeelem)));
+						$('#uid').val('')[0].focus();
+				})
+				
+				$('#add').on('click',function(){
+					$('#wd').append($('<div>').attr('class','pice').css('background-color',color()));
+				});				
+				var timer = 0;
+				$('#flash').on('click',function(evt){						
+					if(timer != 0) {
+						$(this).text('闪烁');
+						window.clearInterval(timer);
+						timer = 0;
+					}else{						
+						timer = setInterval(show,200);
+						$(this).text('暂停');
+					};
+					
+				});	
+			});
+			
+			
+		</script>
+	</body>
+</html>

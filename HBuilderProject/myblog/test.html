@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*<!--内容 - 内边距 - 边框 - 背景图 - 背景色 - 外边距
+			<!--通配符选择器-->*/
+			* {
+				border: 1px solid red;
+				/*margin:0;
+				padding: 0;/*<!--清除默认间距-->*/
+				*/
+			}
+			h1 {
+				text-align:left;
+				border: none;
+				border-bottom: 1px solid red;
+				margin:10px 40px;
+			}
+			h2 {
+				text-align:center;
+				margin-top:40px;
+			}
+			{	
+				background: pink url(img/mm.jpg) ;
+				background-image: url(img/mm.jpg);
+			}
+			#test {
+				/*border: 1px solid red;*/
+				border-collapse: collapse;
+			}
+			#test>td {
+				border: 1px solid blue;
+				
+			}
+			.foo {
+				background: bisque;
+			}
+			#list {
+				list-style:lower-greek;
+				list-style-position: ;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>天气</h1>
+		<hr/>
+		<table id="test">
+			<tr class="foo">
+				<td>1time</td>
+				<td>2time</td>
+				<td>3time</td>
+				<td>4time</td>
+			</tr>
+			<tr>
+				<td>1time</td>
+				<td>2time</td>
+				<td>3time</td>
+				<td>4time</td>
+			</tr>
+			<tr>
+				<td>1time</td>
+				<td>2time</td>
+				<td>3time</td>
+				<td>4time</td>
+			</tr>
+		</table>
+		<ul id="list">
+			<li>gril</li>
+			<li>gril</li>
+			<li>gril</li>
+			<li>gril</li>
+			<li>gril</li>
+		</ul>
+		
+		
+	</body>
+</html>

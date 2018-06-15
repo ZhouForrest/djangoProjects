@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<label>请输入订购房间数:</label>
+		<input type="text" id="foo"/>
+		<button id='fuck' >订购</button>
+		<script src='js/mylid.js'></script>
+		<script>
+			//JSON - JavaScript Object Notation
+			var hotel = {
+				'state': true,
+				'rooms': 100,
+				'name': '7Days',
+				'open':function(){
+					this.state = true;
+					window.alert(this.name + '开始营业');
+				},
+				'close':function(){
+					this.state = false;
+					window.alert(this.name + '停止营业');
+				},
+				'resever':function(num){
+					if (this.rooms - num >= 0){
+						this.rooms -= num;
+						window.alert('预定成功' + num + '间');
+					}else {						
+						window.alert('订房失败');
+					};
+				},
+				'quit':function(num){ 					
+						this.rooms += num;
+						window.alert('退房成功');
+						
+				}	
+			}
+			var num1 = $('foo').value;
+//			console.log(typeof(num1))
+//			console.log(typeof($('foo').value))
+						
+//			console.log(num1)
+//			$('fuck').addEventListener('cilck', function () {
+//				hotel.resever($('foo').value);
+//			});
+			$('fuck').onclick = function() {
+				hotel.resever(parseInt(num1));}
+			
+			
+			
+//			hotel.open();
+//			hotel.resever(105);
+//			window.alert(hotel.rooms);
+		</script>
+	</body>
+</html>

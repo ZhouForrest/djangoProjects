@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			h2 {
+				height: 200px;
+				width: 200px;
+				position: fixed;
+				right:0;
+				background: green;	
+				margin-top:30px;			
+			}
+			#close {
+				clear: both;
+				float: right;
+				border: 1px solid black;
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h2 id='h'><a id='close' target="_blank">关闭</a></h2>
+		
+		<script src="js/mylib.js"></script>
+		<script>
+			var counter = 0;
+			$('close').addEventListener('click',function(){
+					counter += 1;
+					if (counter == 3){
+						$('h').style.display = 'none';
+					}else{
+						window.open('https://www.baidu.com')
+					}
+			});
+			
+						
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.l {
+				text-align: center;
+			}
+			#f {
+				width:300px;
+			}
+			.login input{
+				border: 0;
+				border-bottom: 1px solid black;
+				outline: none;				
+			}
+			.login label {
+				display: inline-block;
+				width:70px;
+				text-align: right;
+			}
+		</style>
+	</head>
+	<body>
+		<fieldset id="f">
+			<legend class="l">用户登录</legend>
+			<form class="login" method="post">
+			<div>
+				<label for="uid">用户名:</label>
+				<input type="text" name="uid"/>
+			</div>
+			<div>
+				<label for="paw">密码:</label>
+				<input type="password" name="pwd" />
+			</div>
+			<div>
+				<label for="">邮箱:</label>
+				<input type="email" />
+			</div>
+			<div>
+				<input type="submit" value="登录"/>
+			</div>
+			</form>
+		</fieldset>
+	
+	</body>
+</html>

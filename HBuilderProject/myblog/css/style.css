@@ -1,0 +1,98 @@
+@charset "utf-8";
+@font-face {
+	font-family:字体;
+	src:url(字体路径);
+}/*给浏览器传无法识别的字体*/
+/*标签选择器-对所有h1的标签生效*/
+/*样式属性名:样式属性值;*/
+h1 {
+	color: red;
+	font: italic bold 50px arial, '幼圆';
+	/*font-family:arial, '幼圆';
+				font-size: 50px;
+				font-weight:bold ;
+				font-style: italic;*/
+	/*text-align: center;*/
+}
+
+
+/* ID选择器 - 只对ID为login的元素生效*/
+
+#login {
+	/*width和height只对块级元素有效*/
+	width: 260px;
+	height: 200px;
+	border: 1px solid blue;
+	border-radius: 6px 6px 6px 6px;
+}
+
+#login input[type="text"],
+#login input[type="password"] {
+	border: none;
+	border-bottom: 1px solid black;
+	outline: none;
+}
+
+
+/*类选择器 - 所有class属性指定为foo的元素有效*/
+
+
+/*通过diaplay设置为inline-block就可以让行级元
+			 * 素向块级元素一样可以设置宽高*/
+
+.foo {
+	display: inline-block;
+	/*行块级*/
+	width: 60px;
+	text-align: right;
+	margin-right: 10px;
+}
+
+
+/*后代选择器 - 用>分隔表示直接后代,用空格表示后代*/
+
+#login>div {
+	margin: 10px 0;
+	/*上右下左的顺序*/
+}
+
+.center {
+	text-align: center;
+}
+
+.center>input {
+	display: inline-block;
+	width: 60;
+	height: 30;
+	color: blue;
+	background: whitesmoke;
+	font: 20px "微软雅黑";
+	border: none;
+	cursor: pointer;
+	/*鼠标放上去变成手*/
+}
+
+.center>input:hover {
+	background: red;
+}
+
+.last {
+	margin-top: 40px !important/*!important*/
+	;
+	text-align: right;
+}
+
+a {
+	text-decoration: none;
+	/*color: blue;*/
+	color: rgba(123, 123, 123, 1);
+}
+
+
+/*a:active {
+				color: red;
+			}*/
+
+a:hover {
+	color: red;
+}

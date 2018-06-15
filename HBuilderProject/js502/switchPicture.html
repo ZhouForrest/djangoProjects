@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body {
+				width:40%;
+				margin: 0 auto;
+			}
+			#picture {
+				width: 400px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div ><img id='picture' src="img/1.jpg" alt="" /></div>
+		<script src="js/mylib.js"></script>
+		<script >
+			var counter = 0;
+				var pic = ["img/1.jpg", 
+				"img/4.jpg", 
+				"img/mm.jpg"];
+				function switchPic(){
+					$('picture').src = pic[counter];
+					counter += 1;
+					counter %= pic.length;
+					//防止计数溢出
+				};
+				//location - 地址栏
+				//document - dom
+				//navigator - 浏览器
+				//screen
+			(function(){				
+				var timer = setInterval(switchPic,1000);
+				//鼠标移动上
+				$('picture').addEventListener('mouseover',function(){
+					clearInterval(timer);
+				});
+				$('picture').addEventListener('mouseout',function(){
+					timer = setInterval(switchPic,1000);
+				});
+				
+				//document.querySelector()按照指定选择器
+			}());
+		</script>
+	</body>
+</html>

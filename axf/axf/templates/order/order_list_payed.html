@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block EXTJS %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'commond/function.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+    <h3>待收货订单列表</h3>
+
+    <ul>
+        <!--订单展示-->
+            <li>
+    {% csrf_token %}
+                {% for order in orders %}
+                <a href="#">
+                    <p>{{ order.o_num }}<!-- 订单id --></p>
+                    {% for num in order.ordergoodsmodel_set.all %}
+                    <p>{{ num.goods_num }}<!-- 数量 --></p>
+                        <!--展示商品的名称-->{{ num.goods.productlongnme }}
+                        <li>
+                            <img src="{{ num.goods.productimg }}" alt="">
+                        </li>
+
+                        <!--处理结束-->
+
+                </a>
+                    {% endfor %}
+                    <input type="button" onclick="receipt()" value="收货">
+            </li>
+        <!--订单处理结束-->
+{% endfor %}
+    </ul>
+    <script>
+        function receipt() {
+            alert('hjk')
+        }
+    </script>
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id='ok'>ok</button>
+		<script src="js/mylid.js"></script>
+		<script >
+			function foo() {
+				window.alert('hello')
+			}
+			var btn = $('ok');
+			bind(btn, 'click', foo);
+			bind(btn, 'click', function(evt) {
+				evt || window.event;//解决兼容问题
+				var target = evt.target ||evt.srcElement;
+				if (window.confirm('Are you sure?')) {
+					unbind(evt.target ||evt.srvElement, 'click', foo);
+				}
+			});
+		</script>
+		
+	</body>
+</html>

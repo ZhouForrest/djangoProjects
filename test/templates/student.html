@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生页面</title>
+</head>
+<body>
+    <h4>学生信息</h4>
+    <hr>
+    <a href="/user/logout/">退出登录</a>
+    <table>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>班级</th>
+        <th>操作</th>
+        <th>选课</th>
+    {% for st in stus %}
+        <tr>
+            <td>{{st.s_id}}</td>
+            <td>{{st.s_name}}</td>
+            <td>{{st.s_age}}</td>
+            <td>{{st.grades.g_name}}</td>
+            <td><a href="/user/edit_student/?id={{st.s_id}}">编辑</a></td>
+            <td><a href="/user/delete_student/?id={{st.s_id}}">删除</a></td>
+            <td><a href="/user/choice_course/?id={{st.s_id}}">选课</a></td>
+        </tr>
+    {% endfor %}
+        </table>
+        {% if paginate.has_prev %}
+        <a href="/user/select_all_student/?page={{paginate.prev_num}}">上一页</a>
+        {% else %} 首页
+        {% endif %}
+            {% for i in paginate.iter_pages() %}
+                <a href="/user/select_all_student/?page={{i}}">{{i}}</a>
+            {% endfor %}
+        {% if paginate.has_next %}
+            <a href="/user/select_all_student/?page={{paginate.next_num}}">下一页</a>
+        {% else %} 末页
+        {% endif %}
+</body>
+</html>

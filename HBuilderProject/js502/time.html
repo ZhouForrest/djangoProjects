@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			div {
+				float: right;
+				width: 450px;
+				text-align: center;
+				height: 40px;
+				background: burlywood;
+				font: 28px/40px arial,"微软雅黑";
+			}
+			#ok {
+				clear: both;
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<h3><span id='sec'>5</span>秒钟后自动调转</h3>
+		<script src="js/mylib.js"></script>
+		<script type="text/javascript">
+			(function(){
+				var counter = 5;
+				window.setTimeout(function(){
+					counter -= 1;
+					if (counter == 0) {
+					location.href="https://www.baidu.com";
+					}
+					else {
+						$('sec').textContent=counter;
+						window.setTimeout(arguments.callee,1000);
+					}
+				}, 1000);
+			}());
+		</script>-->
+		<div id='timer'></div>
+		<button id='ok'>暂停</button>
+		<script src="js/mylib.js"></script>
+		<script type="text/javascript">
+			function showTime(){
+				var date = new Date();
+				var year = date.getFullYear()+'年';
+				var mon = date.getMonth()+1;
+				var m = mon<10 ? '0':'';
+				//condtion ? value1:value2
+				//python value1  if condtion else value2 
+				var month = m + mon+'月';				
+				var da = date.getDate();
+				var d = da<10 ? '0':'';
+				var day = d + da+'日';				
+				var ho = date.getHours();
+				var h = ho < 10 ? '0':'';
+				var hour = h + ho;				
+				var min = date.getMinutes();
+				var mi = min < 10 ? '0':'';
+				var minutes = mi + min;	
+				var se= date.getSeconds();
+				var sec = se < 10 ? '0':'';
+				var second = sec + se;
+				var weekdays = ['日', '一', '二', '三', '四', '五', '六'];
+				var d = '星期' + weekdays[date.getDay()];
+				var timeStr = year+month+day+d+hour+':'+minutes+':'+second;
+				$('timer').textContent = timeStr;
+			}
+			(function(){
+				showTime();
+				var timer = 0;
+				$('ok').addEventListener('click',function(evt){
+					if (timer != 0){						
+						$('ok').textContent = '继续';
+						window.clearInterval(timer);
+						timer = 0;
+					}else{
+						timer = setInterval(showTime,1000);
+						evt.target.textContent = '暂停'
+					}
+				});
+
+		}());
+		</script>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>	
+			input {
+			
+			}
+		</style>
+	</head>
+	<body>
+		<div id='choice'>
+			<div><input type="checkbox" />游泳</div>
+			<div><input type="checkbox"  />跳水</div>
+			<div><input type="checkbox"  />赛车</div>
+			<div><input type="checkbox"  />打篮球</div>			
+		</div>
+		<div >			
+			<button id='all'>全选</button>
+			<button id='none'>清空</button>
+			<button id='invet'>反选</button>
+			<!--<a href="javascript:void(0);" id='all'>全选</a>			
+			<a href="javascript:void(0);" id='none'>清空</a>			
+			<a href="javascript:void(0);" id='invet'>反选</a>-->
+			<!--取消a默认行为-->
+		</div>
+		<script src="js/mylib.js">
+			
+		</script>
+		<script>
+			(function(){
+				bton = document.querySelectorAll('input');
+				$('all').addEventListener('click',function(){				
+				for (var i = 0; i < bton.length; i += 1){
+					bton[i].checked = true;
+					}
+				})
+				$('none').addEventListener('click',function(){
+					for (var i = 0; i < bton.length; i += 1){
+					bton[i].checked = false;
+					}
+				})
+					$('invet').addEventListener('click',function(){
+					for (var i = 0; i < bton.length; i += 1){
+					bton[i].checked = !bton[i].checked;
+					}
+				})
+			}());
+		</script>
+	</body>
+</html>

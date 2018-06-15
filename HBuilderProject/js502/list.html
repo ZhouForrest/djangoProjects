@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			a{
+				text-decoration: none;
+			}
+			li {
+				list-style: none;
+				height: 40px;
+				width: 120px;
+				text-align: center;
+				font: 20px/40px arial,"微软雅黑";
+				margin-bottom:2px ;
+				background: bisque;
+			}
+			a {
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				position: relative;
+				left: 20px;
+				background: url(img/ui-icons-red.png) no-repeat -95px -130px;
+				
+			}
+		</style>
+	</head>
+	<body>
+<!--(function(){String.prototype.trim = String.prototype.trimString.prototype.trim||function(){};解决兼容性问题-->
+		<ul>
+			<li>苹果<a href="javaspript:void(0)";></a></li>
+			<li>芒果<a href="javaspript:void(0)";></a></li>
+			<li>桃子<a href="javaspript:void(0)";></a></li>
+			<li>香蕉<a href="javaspript:void(0)";></a></li>
+		</ul>
+		<input id='text' type="text" />
+		<button id='add'>+</button>
+		<button id='sub'>-</button>
+		<script src="js/mylib.js"></script>
+		<script >
+			//委托回调函数 - 事件回调函数,知道需要干什么但不知道什么时候发生,代表事件对象的evt参数事件发生时浏览器回调时传入
+			function removeItem(evt) {
+				ul.removeChild(evt.target.parentNode);
+			}			
+				(function(){
+					$('add').addEventListener('click',function(){
+//					for (var i = 0; i < $('text').value; i +=1){
+						var ul = document.querySelector('ul');
+						var li = document.createElement('li');
+						var a = document.createElement('a');
+						a.href = 'javascript:void(0);';						
+//						a.addEventListener('click', function(evt){
+//							ul.removeChild(evt.target.parentNode);
+//						});
+						li.appendChild(a);
+						li.innerHTML = $('text').value;
+						ul.insertBefore(li, ul.firstChild);
+						$('text').value = '';
+						$('text').focus();
+//					}
+				});								
+					var ul = document.querySelector('ul');	
+//					$('rev').addEventListener('click',function(){
+//						ul.removeChild($('rev').parentNode);
+//					});
+					var a = document.querySelectorAll('a');	
+//					a[1].addEventListener('click',function(){
+//							ul.removeChild(a[1].parentNode);
+//						});
+					for (var i = 0; i < a.length; i += 1){
+						a[i].addEventListener('click',function(evt){
+							ul.removeChild(evt.target.parentNode);
+						});
+				};
+			}());
+		</script>
+	</body>
+</html>

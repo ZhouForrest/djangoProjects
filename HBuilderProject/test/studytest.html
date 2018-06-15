@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				display: inline-block;
+				float: left;
+				margin:0 10px;
+				overflow: hidden;
+			}
+			.textBox>input {
+				width: 30px;
+			}
+			#resBox {
+				height: 20px;
+				width: 30px;
+				border: 1px solid black;
+			}
+			#last {
+				font-size: 14px;
+				margin: 1px;
+				line-height: 18px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="textBox">
+			<input type="text" id="first">
+		</div>
+		<div>
+			<select name="" id="what">
+				<option value="0">+</option>
+				<option value="1">-</option>
+				<option value="2">*</option>
+				<option value="3">/</option>
+			</select>
+		</div>
+		<div class="textBox">
+			<input type="text" id="second">
+		</div>
+		<div>
+			<button onclick="getRes()">=</button>
+		</div>
+		<div id="resBox">
+			<h2 id="last"></h2>
+		</div>
+		
+		<script>
+			
+			
+			
+			var res = 0
+			function getRes(){
+				var a = parseInt(document.getElementById('first').value);
+				var b = parseInt(document.getElementById('second').value);
+				var c = document.getElementById('what').value;
+				if (c == '0'){
+					res = a + b;
+				}
+				else if (c== '1'){
+					res = a - b;
+				}
+				else if (c == '2'){
+					res = a * b;
+				}
+				else if (c == '3'){
+					res = a / b;
+				}
+				var d = document.getElementById('last');
+				d.innerHTML=res;
+			}
+			
+		</script>
+	</body>
+</html>

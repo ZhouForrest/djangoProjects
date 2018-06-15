@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#data {
+				border-collapse:collapse;
+			}
+			#data td,#data th{
+				border: 1px solid beige;
+				height: 20px;
+				width: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		<table id='data'>
+			<tr>
+				<th>Name</th>
+				<th>Gender</th>
+				<th>Tel</th>
+				<th>Address</th>
+				<th>Mode</th>
+			</tr>
+			<tr>
+				<td>ff</td>
+				<td>ff</td>
+				<td>ss</td>
+				<td>ss</td>
+				<td>ss</td>
+			</tr>
+			<tr>
+				<td>ss</td>
+				<td>ss</td>
+				<td>ss</td>
+				<td>ss</td>
+				<td>ff</td>
+			</tr>
+			<tr>
+				<td>ff</td>
+				<td></td>
+				<td>ff</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>ff</td>
+				<td></td>
+				<td>ff</td>
+				<td>ff</td>
+				<td>dd</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>ff</td>
+				<td>ff</td>
+				<td>f</td>
+				<td>fff</td>
+			</tr>
+			<tr>
+				<td>f</td>
+				<td>f</td>
+				<td>f</td>
+				<td></td>
+				<td>ff</td>
+			</tr>
+			<tr>
+				<td>ff</td>
+				<td></td>
+				<td>ff</td>
+				<td>ff</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>ff</td>
+				<td>ff</td>
+				<td>ff</td>
+				<td>ff</td>
+				<td>ff</td>
+			</tr>
+			<button id='del'>清除表格</button>
+			<button id='clear'>清除表格数据</button>
+			<button id='href'>添加超链接</button>
+			<script src="js/jquery.min.js"></script>
+			<script>
+				$(function(){
+					$('#data tr:odd').css('background','lightblue');
+					$('#data tr:even').css('background','lawngreen');
+					$('#data tr:eq(0)').css('background','lightcoral');
+					$('#clear').on('click',function(){
+						$('#data tr:gt(0) td').text('');
+					});
+//					$('#data td:empty').remove();
+//					$('#data td:contains("f")').remove();
+					$('#href').on('click',function(){
+						$('#data tr:gt(0) td').each(function(){
+							$(this).html('<a href="https://www.baidu.com" target="_blank">' + $(this).text() + '</a>');
+						});					
+					});					
+				});
+			</script>
+		</table>
+	</body>
+</html>
